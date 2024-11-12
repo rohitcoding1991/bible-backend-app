@@ -1,0 +1,345 @@
+{
+	"info": {
+		"_postman_id": "6e4256a5-a800-4448-a23d-34c89a8d9db6",
+		"name": "bible",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29837961"
+	},
+	"item": [
+		{
+			"name": "tasks",
+			"item": [
+				{
+					"name": "task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Demo Task\",\r\n    \"description\": \"Demo description\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "task",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Updated task\",\r\n    \"description\": \"Updated description\",\r\n    \"status\": \"completed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/tasks/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"tasks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "task",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2000/api/tasks/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"tasks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "task",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2000/api/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"rohitcoding1991@gmail.com\",\n    \"password\":\"Pa$$w0rd\",\n    \"name\":\"Test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"email\":\"rohitcoding1991@gmail.com\",\n     \"otpCode\":\"849406\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/auth/verifyotp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"auth",
+								"verifyotp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"rohitcoding1991@gmail.com\",\n    \"password\":\"Pa$$w0rd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "gmail",
+			"item": [
+				{
+					"name": "generate email auth",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJraWQiOiIwUkpqTjVrQlVpT0VHbXVOcjgwSlQ0KzBYUHBHVmxXOWs3aVwvWFRPRzQ4WT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJmMTEzYmQzYS04MDgxLTcwY2EtNDYxMi1kNjYwOTVlNTJiMDIiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGgtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aC0xX1FzdFZJODhPNCIsImNsaWVudF9pZCI6IjE5NG5mY3A1ZHMxdDNnNDdnNWRscWliazRvIiwib3JpZ2luX2p0aSI6Ijk5NzVhNmQ3LTA1ODEtNDUwNS04ZTE3LTJkODhlZTk5MmM0ZiIsImV2ZW50X2lkIjoiZjRmNzFiZDAtZjkzMy00N2Q4LTgyNzgtZDk3MjI1NTlkN2EzIiwidG9rZW5fdXNlIjoiYWNjZXNzIiwic2NvcGUiOiJhd3MuY29nbml0by5zaWduaW4udXNlci5hZG1pbiIsImF1dGhfdGltZSI6MTcyNjU3NzgxNiwiZXhwIjoxNzI2NjY0MjE2LCJpYXQiOjE3MjY1Nzc4MTYsImp0aSI6IjI4MDI4OWZjLWJlYmUtNGI4MC05MTc0LTg1MmIyNDA4NmFhYyIsInVzZXJuYW1lIjoiZjExM2JkM2EtODA4MS03MGNhLTQ2MTItZDY2MDk1ZTUyYjAyIn0.agaHdi4vAPZ47bTQRvvZ_QOR45MjtSWbcWzb95TqGtScz8FDsQkokYDrHKLf-3XxSyfrTVVCMQrS4XXm6OyCyfiZxKbap0x7sJ5hrWVpcweniJZPIrG4z4WNGnGhkknxLUiTh98iRMfbjdpN8ZejSUNyaOnAHuhwp2dGRF-oNSETFAAv-_bxomfcyuduva7gjtzzBcrAnPP054ITMJv3uX1DAEMprCgVD-76bht5m12htJ4arY4SR5mn5QQ8lHZ1e1HLTWUWBaOiDY68xJAIpyZ8Bwn4ONoziAW_skKQ-Bpopw1lAay6wR6L5KpGZfXXvR5Nfm7GlRj-0v-BrZlYbg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2000/api/gmail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"gmail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get mails",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJraWQiOiIwUkpqTjVrQlVpT0VHbXVOcjgwSlQ0KzBYUHBHVmxXOWs3aVwvWFRPRzQ4WT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJmMTEzYmQzYS04MDgxLTcwY2EtNDYxMi1kNjYwOTVlNTJiMDIiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGgtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aC0xX1FzdFZJODhPNCIsImNsaWVudF9pZCI6IjE5NG5mY3A1ZHMxdDNnNDdnNWRscWliazRvIiwib3JpZ2luX2p0aSI6Ijk5NzVhNmQ3LTA1ODEtNDUwNS04ZTE3LTJkODhlZTk5MmM0ZiIsImV2ZW50X2lkIjoiZjRmNzFiZDAtZjkzMy00N2Q4LTgyNzgtZDk3MjI1NTlkN2EzIiwidG9rZW5fdXNlIjoiYWNjZXNzIiwic2NvcGUiOiJhd3MuY29nbml0by5zaWduaW4udXNlci5hZG1pbiIsImF1dGhfdGltZSI6MTcyNjU3NzgxNiwiZXhwIjoxNzI2NjY0MjE2LCJpYXQiOjE3MjY1Nzc4MTYsImp0aSI6IjI4MDI4OWZjLWJlYmUtNGI4MC05MTc0LTg1MmIyNDA4NmFhYyIsInVzZXJuYW1lIjoiZjExM2JkM2EtODA4MS03MGNhLTQ2MTItZDY2MDk1ZTUyYjAyIn0.agaHdi4vAPZ47bTQRvvZ_QOR45MjtSWbcWzb95TqGtScz8FDsQkokYDrHKLf-3XxSyfrTVVCMQrS4XXm6OyCyfiZxKbap0x7sJ5hrWVpcweniJZPIrG4z4WNGnGhkknxLUiTh98iRMfbjdpN8ZejSUNyaOnAHuhwp2dGRF-oNSETFAAv-_bxomfcyuduva7gjtzzBcrAnPP054ITMJv3uX1DAEMprCgVD-76bht5m12htJ4arY4SR5mn5QQ8lHZ1e1HLTWUWBaOiDY68xJAIpyZ8Bwn4ONoziAW_skKQ-Bpopw1lAay6wR6L5KpGZfXXvR5Nfm7GlRj-0v-BrZlYbg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2000/api/gmail/mails?pageNo=09736801064027158630",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"gmail",
+								"mails"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "09736801064027158630"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single mail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJraWQiOiIwUkpqTjVrQlVpT0VHbXVOcjgwSlQ0KzBYUHBHVmxXOWs3aVwvWFRPRzQ4WT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJmMTEzYmQzYS04MDgxLTcwY2EtNDYxMi1kNjYwOTVlNTJiMDIiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGgtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aC0xX1FzdFZJODhPNCIsImNsaWVudF9pZCI6IjE5NG5mY3A1ZHMxdDNnNDdnNWRscWliazRvIiwib3JpZ2luX2p0aSI6Ijk5NzVhNmQ3LTA1ODEtNDUwNS04ZTE3LTJkODhlZTk5MmM0ZiIsImV2ZW50X2lkIjoiZjRmNzFiZDAtZjkzMy00N2Q4LTgyNzgtZDk3MjI1NTlkN2EzIiwidG9rZW5fdXNlIjoiYWNjZXNzIiwic2NvcGUiOiJhd3MuY29nbml0by5zaWduaW4udXNlci5hZG1pbiIsImF1dGhfdGltZSI6MTcyNjU3NzgxNiwiZXhwIjoxNzI2NjY0MjE2LCJpYXQiOjE3MjY1Nzc4MTYsImp0aSI6IjI4MDI4OWZjLWJlYmUtNGI4MC05MTc0LTg1MmIyNDA4NmFhYyIsInVzZXJuYW1lIjoiZjExM2JkM2EtODA4MS03MGNhLTQ2MTItZDY2MDk1ZTUyYjAyIn0.agaHdi4vAPZ47bTQRvvZ_QOR45MjtSWbcWzb95TqGtScz8FDsQkokYDrHKLf-3XxSyfrTVVCMQrS4XXm6OyCyfiZxKbap0x7sJ5hrWVpcweniJZPIrG4z4WNGnGhkknxLUiTh98iRMfbjdpN8ZejSUNyaOnAHuhwp2dGRF-oNSETFAAv-_bxomfcyuduva7gjtzzBcrAnPP054ITMJv3uX1DAEMprCgVD-76bht5m12htJ4arY4SR5mn5QQ8lHZ1e1HLTWUWBaOiDY68xJAIpyZ8Bwn4ONoziAW_skKQ-Bpopw1lAay6wR6L5KpGZfXXvR5Nfm7GlRj-0v-BrZlYbg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2000/api/gmail/mails/192000fd9e032c6e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"gmail",
+								"mails",
+								"192000fd9e032c6e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJraWQiOiIwUkpqTjVrQlVpT0VHbXVOcjgwSlQ0KzBYUHBHVmxXOWs3aVwvWFRPRzQ4WT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJmMTEzYmQzYS04MDgxLTcwY2EtNDYxMi1kNjYwOTVlNTJiMDIiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGgtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aC0xX1FzdFZJODhPNCIsImNsaWVudF9pZCI6IjE5NG5mY3A1ZHMxdDNnNDdnNWRscWliazRvIiwib3JpZ2luX2p0aSI6Ijk5NzVhNmQ3LTA1ODEtNDUwNS04ZTE3LTJkODhlZTk5MmM0ZiIsImV2ZW50X2lkIjoiZjRmNzFiZDAtZjkzMy00N2Q4LTgyNzgtZDk3MjI1NTlkN2EzIiwidG9rZW5fdXNlIjoiYWNjZXNzIiwic2NvcGUiOiJhd3MuY29nbml0by5zaWduaW4udXNlci5hZG1pbiIsImF1dGhfdGltZSI6MTcyNjU3NzgxNiwiZXhwIjoxNzI2NjY0MjE2LCJpYXQiOjE3MjY1Nzc4MTYsImp0aSI6IjI4MDI4OWZjLWJlYmUtNGI4MC05MTc0LTg1MmIyNDA4NmFhYyIsInVzZXJuYW1lIjoiZjExM2JkM2EtODA4MS03MGNhLTQ2MTItZDY2MDk1ZTUyYjAyIn0.agaHdi4vAPZ47bTQRvvZ_QOR45MjtSWbcWzb95TqGtScz8FDsQkokYDrHKLf-3XxSyfrTVVCMQrS4XXm6OyCyfiZxKbap0x7sJ5hrWVpcweniJZPIrG4z4WNGnGhkknxLUiTh98iRMfbjdpN8ZejSUNyaOnAHuhwp2dGRF-oNSETFAAv-_bxomfcyuduva7gjtzzBcrAnPP054ITMJv3uX1DAEMprCgVD-76bht5m12htJ4arY4SR5mn5QQ8lHZ1e1HLTWUWBaOiDY68xJAIpyZ8Bwn4ONoziAW_skKQ-Bpopw1lAay6wR6L5KpGZfXXvR5Nfm7GlRj-0v-BrZlYbg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2000/api/auth/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2000",
+							"path": [
+								"api",
+								"auth",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
