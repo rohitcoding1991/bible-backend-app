@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node init && nodemon index.js",
     "postinstall": "npx prisma generate",
     "generate": "npx prisma generate",
-    "migrate":"npx prisma migrate dev --name add_oauth_token_model",
+    "migrate": "npx prisma migrate dev --name add_oauth_token_model",
     "test": "jest"
   },
   "keywords": [],
