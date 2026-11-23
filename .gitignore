@@ -1,4 +1,6 @@
 branch_structure.json
 
-!.env.example
 node_modules
+
+!.env.example
+config.bat
